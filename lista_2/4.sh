@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# W getopts dwukropek oznacza uzywanie danej flagi przez skrypt
+
 usage() { echo "Uzycie: $0 [-h - pokazanie helpa] [-n <modyfikowane w ciagu ostatnich N dni>] [-m <maska>] [-a <nazwa tara>]" 1>&2; exit 1; }
 
 
