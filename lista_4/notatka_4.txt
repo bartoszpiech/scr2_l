@@ -1,0 +1,52 @@
+strace -> linux
+trac -> *nix
+strace + ldtrace = trac
+
+
+strace najwazniejsze
+-e trace= <nazwa, proces, sygnal, miejsce w pamieci itp>
+
+strace mozna wywolac na rozne sposoby
+-strace bash
+z pomoca flagi mozna sledzic juz wczesniej uruchomiony proces
+
+
+6.
+gcc hw.c
+strace ./a.out
+
+.so - biblioteki wspoldzielone/dynamiczne (w windzie dll)
+
+6...
+znalezc pliki konfiguracyjne basha
+strace bash -e trace=<open albo access>
+
+lista 5
+pipe(int *);
+-----
+int fd_tab[2];
+pipe(fd_tab);
+----
+fork() 	-> int
+>0  	-> pid dziecka, jestesmy w rodzicu
+0	-> jestesmy w dziecku
+<0	-> blad
+----
+int pid=fork();
+if (pid > 0) {
+// kod rodzica
+} else if (pid == 0) {
+// kod dziecka
+} else {
+// blad
+}
+uzywac open/close read/write a nie fopen fclose ani printf scanf
+open/close(int fd)
+
+prog1 | prog2
+
+wersja1
+read/write(int fd, char* komunikat_miejscenakomunikat, int ile);
+wersja2
+dup(int fd)
+execlp(...,...,...)

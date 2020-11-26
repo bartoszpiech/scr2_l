@@ -1,0 +1,38 @@
+do zad2 odczyt pseudosystemu plikow : /proc/ i bilbioteki na uniksie w man proc.1
+cpp -lrt biblioteka realtime
+stdio
+time.h
+signal
+unistd
+ucontext
+
+funkcja przechwytujaca
+void nazwa(int sig, siginfo_t *si, ucontext_t *con)
+if sig == 3
+	printf(zlapany sigquit)
+	
+
+main
+...
+
+--------------
+sigset_t signal_set
+sigemptyset(&signal_set)
+sigaddset(&signal_set, SIGUSR1)
+
+sigprocmask(SIG_UNBLOCK, &signal_set, NULL)
+
+
+
+-----
+struct sigaction act;
+act.sa_handler = nazwa (wskaznik na fct)
+act.sa_flags = SA_SIGINFO
+sigaction(SIGQUIT, &act, 0)
+
+=-----
+struct timespec tv;
+tv.tv_sec = (time_t) 1;
+tv.tv_nsec = 100 * 1000000L;
+
+nanosleep(&tv, (struct timespec*) NULL)
