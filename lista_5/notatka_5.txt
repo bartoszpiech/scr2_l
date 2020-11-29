@@ -1,0 +1,23 @@
+zamiast pipe/fork --- mamy jeden proces
+potok nazwany otwieramy jako fd
+------
+mknod potok1 p
+
+-----
+fd_pipe = open("potok1", O_WRONLY);
+
+petla: po wszystkich plikach
+druga petla: po zawartosci pliku (eof) mozna uzywac funkcji (feof(FILE *)); // przydatna do fscanf/getc
+read/fscanf/getc
+
+write(fd_pipe);
+
+-----
+tail -c +1 -f
+-c +1 powoduje ze tail sie zmienia w interaktywny program, czeka bo moze przyjda nowe dane do potoku, wyswietla w paczkach
++1 najmniejsza wielkosc danych jaka wyswietla
+
+-----
+lista 6:
+
+
